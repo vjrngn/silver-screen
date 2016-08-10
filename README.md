@@ -1,5 +1,5 @@
-# silver-screen
-Component Driven Design in VueJS Sample App
+# Silver Screen App
+Companion code for [Component Driven Design in VueJS](http://blog.vijayrangan.com/2016/08/component-driven-ui-with-vuejs)
 
 ## Installation
 	git clone https://github.com/vjrngn/silver-screen.git
