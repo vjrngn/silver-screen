@@ -7,22 +7,30 @@
 
 
 <style>
+    body {
+        background: #F5F8FA;
+    }
     #container {
         margin-top: 75px;
+    }
+    a {
+        color: white;
     }
 </style>
 
 <template>
-    <app-header title="Silver Screen"></app-header>
+    <section>
+        <app-header title="Silver Screen"></app-header>
 
-    <div class="container" id="container">
-        <movie-search></movie-search>
+        <div class="container" id="container">
+            <movie-search></movie-search>
 
-        <hr>
-        <div class="row">
-            <movie-list :movies="movies"></movie-list>
+            <hr>
+            <div class="row">
+                <movie-list :movies="movies"></movie-list>
+            </div>
         </div>
-    </div>
+    </section>
 </template>
 
 
@@ -41,7 +49,7 @@
         },
 
         events: {
-            // Event thrown by the custom MovieSearch component when the movie results have been received.
+            // Event fired by the custom MovieSearch component when the movie results have been received.
             MovieReceived(movieData) {
                 let m = movieData.results.map(movie => {
                     return {

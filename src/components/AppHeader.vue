@@ -14,12 +14,27 @@
             <div class="navbar-header">
                 <a class="navbar-brand text-center" href="#">{{ title }}</a>
             </div>
+            <ul class="nav navbar-nav">
+                <li class="nav-item pull-xs-right">
+                    <a class="nav-link" href="" @click="logout()">Logout</a>
+                </li>
+            </ul>
         </div>
     </nav>
 </template>
 
 <script>
-export default {
-    props: ['title']
-}
+    import auth from '../services/auth'
+    export default {
+        props: ['title'],
+        data() {
+            isLoggedIn: auth.isLoggedIn
+        },
+        methods: {
+            logout () {
+                auth.logout();
+                this.$route.router.redirect('login')
+            }
+        }
+    }
 </script>
